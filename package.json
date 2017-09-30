@@ -1,0 +1,49 @@
+{
+  "name": "date-time-format",
+  "version": "0.1.0",
+  "description": "Small datetime formater",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --reporter spec",
+    "testWin": "node_modules/mocha/bin/_mocha — -R spec test/*",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "coverWin": "node node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "build": "rollup -c",
+    "buildBrowser": "rollup -c rollup.config.browser.js",
+    "buildBrowserMin": "rollup -c rollup.config.browser.minified.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreydos/date-time-format.git"
+  },
+  "keywords": [
+    "date",
+    "datetime",
+    "timeformat",
+    "dateformat"
+  ],
+  "author": "“Andrey <“andrey.novator@gmail.com”> (http://www.andrey.pp.ua)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreydos/date-time-format/issues"
+  },
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "homepage": "https://github.com/andreydos/date-time-format#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "chai": "^4.1.2",
+    "coveralls": "^2.13.3",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.3",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-babel-minify": "^3.1.2",
+    "rollup-plugin-eslint": "^4.0.0"
+  }
+}

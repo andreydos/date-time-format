@@ -1,10 +1,11 @@
 'use strict';
 
 var expect = require('chai').expect;
-// var logger = require('../index');
+var formater = require('../src/lib/formater-core');
 
 describe('#initial test', function() {
-    it('should be true', function() {
-        expect(true).to.equal(true);
+    it('should convert single digits', function() {
+        var result = formater(1);
+        expect(result).to.equal('1');
     });
 });

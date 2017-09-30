@@ -1,12 +1,7 @@
-// function Formatter() {
-//     this.test = (i) => {
-//         console.log('TEST');
-//         return i + 1;
-//     };
-// }
-//
-// export { Formatter as default };
+function Formatter() {
+    this.test = () => {
+        console.log('TEST');
+    };
+}
 
-module.exports = function(number, locale) {
-    return number.toLocaleString(locale);
-};
+export { Formatter as default };

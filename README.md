@@ -5,7 +5,7 @@
 
 # Little Logger
 
-date-time-format
+Lightweight date time formater for node and browser.
 
 ## Versioning
 

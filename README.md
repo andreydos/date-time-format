@@ -3,9 +3,48 @@
 [![Build Status](https://travis-ci.org/andreydos/date-time-format.svg?branch=master)](https://travis-ci.org/andreydos/date-time-format)
 [![Coverage Status](https://coveralls.io/repos/github/andreydos/date-time-format/badge.svg?branch=master)](https://coveralls.io/github/andreydos/date-time-format?branch=master)
 
-# Little Logger
+# Date time formatter
 
-Lightweight date time formater for node and browser.
+Lightweight date time formatter for node and browser.
+
+# Getting started
+
+**Browser usage** see in examples directory.
+
+**Node usage**:
+
+```
+var DateTimeFormat = require("date-time-format");
+
+var defaultFormatter = new DateTimeFormat();
+
+console.log(defaultFormatter.parse()); // return current date/time in default format
+console.log(defaultFormatter.parse('HH:mm:ss', new Date ("2017-10-02T05:05:05.985Z")));
+console.log(defaultFormatter.parse('HH:mm:ss (year: YYYY)', "2017-10-02T08:18:31.985Z")); // time string instead of Date object
+console.log(defaultFormatter.now('HH:mm:ss')); // current time in specified format
+console.log(defaultFormatter.now('HH:mm:ss (DD-MM-YYYY)'));
+```
+
+_or set format mask in the constructor:_
+
+```
+var formatter = new DateTimeFormat('HH:mm (YYYY-MM-DD)');
+console.log(formatter.now()); // current date/time in format settled in constructor
+```
+
+## Running the tests
+
+Run test:
+
+```
+npm run test
+```
+
+Run test on Windows machine
+
+```
+npm run testWin
+```
 
 ## Versioning
 

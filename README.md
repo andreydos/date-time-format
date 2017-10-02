@@ -1,4 +1,4 @@
-# date-time-format
+# format-date-time
 
 [![Build Status](https://travis-ci.org/andreydos/date-time-format.svg?branch=master)](https://travis-ci.org/andreydos/date-time-format)
 [![Coverage Status](https://coveralls.io/repos/github/andreydos/date-time-format/badge.svg?branch=master)](https://coveralls.io/github/andreydos/date-time-format?branch=master)
@@ -14,7 +14,7 @@ Lightweight date time formatter for node and browser.
 **Node usage**:
 
 ```
-var DateTimeFormat = require("date-time-format");
+var DateTimeFormat = require("format-date-time");
 
 var defaultFormatter = new DateTimeFormat();
 

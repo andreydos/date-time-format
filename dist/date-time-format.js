@@ -32,7 +32,7 @@ function Formatter(constructorFormat) {
         globalFormat = constructorFormat;
     }
 
-    function parseNext(parseToFormat, dateObject) {
+    function parseNext(dateObject, parseToFormat) {
         var regex = /(?=(YYYY|YY|MM|DD|HH|mm|ss|ms))\1([:/]*)/;
         var match = regex.exec(parseToFormat);
         var date = dateObject || new Date();
@@ -43,7 +43,7 @@ function Formatter(constructorFormat) {
             var cleanPatternValue = paddedPatternValue.slice(-keyProps[1]) + (match[2] || '');
             var format = parseToFormat.replace(match[0], cleanPatternValue);
 
-            parseNext(format, date);
+            parseNext(date, format);
         } else {
             output = parseToFormat;
         }
@@ -60,24 +60,12 @@ function Formatter(constructorFormat) {
             outputFormat = format;
         }
 
-        return parseNext(outputFormat);
+        return parseNext(new Date(), outputFormat);
     };
 
-    this.parse = function parse(format, date) {
-        if (constructorFormat) {
-            console.log('Since format specified globally in the constructor use "parseWithFormat" function instead');
-
-            return undefined;
-        }
-
+    this.parse = function parse(date, format) {
         var dateObj = void 0;
         var outputFormat = void 0;
-
-        if (typeof format !== 'string') {
-            outputFormat = globalFormat;
-        } else {
-            outputFormat = format;
-        }
 
         if (!date || Number.isNaN(new Date(date).getDate())) {
             dateObj = new Date();
@@ -85,11 +73,13 @@ function Formatter(constructorFormat) {
             dateObj = new Date(date);
         }
 
-        return parseNext(outputFormat, dateObj);
-    };
+        if (typeof format !== 'string') {
+            outputFormat = globalFormat;
+        } else {
+            outputFormat = format;
+        }
 
-    this.parseWithFormat = function () {
-        console.log('Not realized yet.');
+        return parseNext(dateObj, outputFormat);
     };
 
     return this;

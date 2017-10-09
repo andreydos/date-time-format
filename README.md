@@ -14,13 +14,17 @@ Lightweight date time formatter for node and browser.
 **Node usage**:
 
 ```
+npm i format-date-time
+```
+
+```
 var DateTimeFormat = require("format-date-time");
 
 var defaultFormatter = new DateTimeFormat();
 
 console.log(defaultFormatter.parse()); // return current date/time in default format
-console.log(defaultFormatter.parse('HH:mm:ss', new Date ("2017-10-02T05:05:05.985Z")));
-console.log(defaultFormatter.parse('HH:mm:ss (year: YYYY)', "2017-10-02T08:18:31.985Z")); // time string instead of Date object
+console.log(defaultFormatter.parse(new Date ("2017-10-02T05:05:05.985Z"), 'HH:mm:ss'));
+console.log(defaultFormatter.parse("2017-10-02T08:18:31.985Z", 'HH:mm:ss (year: YYYY)')); // time string instead of Date object
 console.log(defaultFormatter.now('HH:mm:ss')); // current time in specified format
 console.log(defaultFormatter.now('HH:mm:ss (DD-MM-YYYY)'));
 ```
@@ -30,6 +34,7 @@ _or set format mask in the constructor:_
 ```
 var formatter = new DateTimeFormat('HH:mm (YYYY-MM-DD)');
 console.log(formatter.now()); // current date/time in format settled in constructor
+console.log(formatter.parse(new Date ("2017-10-02T05:05:05.985Z")));
 ```
 
 ## Running the tests

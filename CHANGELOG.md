@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.1] - 2019-05-13
+### Update
+- docs
+
 ## [0.3.0] - 2017-10-09
 ### Added
 - parse to global format specified in constructor

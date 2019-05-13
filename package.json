@@ -1,6 +1,6 @@
 {
   "name": "format-date-time",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Small date and time formater. Format by user mask or with default format",
   "main": "index.js",
   "scripts": {
